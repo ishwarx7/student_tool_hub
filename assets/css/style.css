@@ -1,16 +1,17 @@
- :root {
-     --primary: #40e0d0;
-     --primary-dark: #36c9ba;
-     --secondary: #ff7f50;
-     --accent: #9370db;
-     --dark: #0a0a0a;
-     --darker: #050505;
-     --light: #ffffff;
-     --success: #28a745;
-     --nav-bg: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-     --link-hover: rgba(255, 255, 255, 0.1);
-     --link-active: #00d8ff;
- }
+:root {
+  --primary: #e3f2fd;          /* Light Blue Background */
+  --primary-dark: #1565c0;     /* Strong Blue for Highlights */
+  --secondary: #ffca28;        /* Soft Amber Accent */
+  --accent: #7c4dff;           /* Deep Purple for CTA */
+  --dark: #212121;             /* Base Text Color */
+  --darker: #0d0d0d;           /* Footer/Heavy Background */
+  --light: #ffffff;            /* Cards / Inputs / Light Areas */
+  --success: #43a047;          /* Green for Alerts/Success */
+  --nav-bg: linear-gradient(135deg, #1565c0, #1e88e5, #42a5f5); /* Navbar */
+  --link-hover: rgba(21, 101, 192, 0.1); /* Hover Effect */
+  --link-active: #00bcd4;      /* Cyan for Active Links */
+}
+
 
  body {
      margin: 0;
