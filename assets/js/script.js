@@ -1,14 +1,19 @@
 // header scorll
-let lastScrollY = window.scrollY;
 const navbar = document.querySelector('.navbar');
+let lastScrollY = window.scrollY;
 
 window.addEventListener('scroll', () => {
-  if (window.scrollY > lastScrollY) {
-    navbar.classList.add('hide');
+  const currentScrollY = window.scrollY;
+
+  if (currentScrollY <= 10) {
+    navbar.classList.remove('hide'); // show at top
+  } else if (currentScrollY > lastScrollY) {
+    navbar.classList.add('hide'); // scroll down
   } else {
-    navbar.classList.remove('hide');
+    navbar.classList.remove('hide'); // scroll up
   }
-  lastScrollY = window.scrollY;
+
+  lastScrollY = currentScrollY;
 });
 
 // header sidebar
