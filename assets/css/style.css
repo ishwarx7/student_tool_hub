@@ -155,7 +155,7 @@
  .hero {
       text-align: center;
       padding: 80px 20px;
-      color: var(--light);
+      color: var(--dark);
     }
 
     .hero h1 {
