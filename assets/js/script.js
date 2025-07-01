@@ -1,27 +1,27 @@
 // header sidebar
 document.addEventListener("DOMContentLoaded", () => {
-      const toggle = document.querySelector(".menu-toggle");
-      const navLinks = document.querySelector(".nav-links");
+  const toggle = document.querySelector(".menu-toggle");
+  const navLinks = document.querySelector(".nav-links");
 
-      toggle.addEventListener("click", () => {
-        navLinks.classList.toggle("active");
-      });
+  toggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
 
-      document.addEventListener("click", (e) => {
-        if (e.target.classList.contains("close-btn")) {
-          navLinks.classList.remove("active");
-        }
-      });
-    });
+  document.addEventListener("click", (e) => {
+    if (e.target.classList.contains("close-btn")) {
+      navLinks.classList.remove("active");
+    }
+  });
+});
 
-    // GPA calculator
-    const gradeMap = {'A+':10,'A':9,'B+':8,'B':7,'C+':6,'C':5,'D':4,'F':0};
-function calcGPA(){
+// GPA calculator
+const gradeMap = { 'A+': 10, 'A': 9, 'B+': 8, 'B': 7, 'C+': 6, 'C': 5, 'D': 4, 'F': 0 };
+function calcGPA() {
   const g = document.getElementById('grades').value.toUpperCase().split(',');
-  const v = g.filter(x => gradeMap[x.trim()]!=undefined);
-  if(!v.length) return document.getElementById('gpa-result').textContent = "❌ Enter valid grades!";
-  const gpa = v.reduce((a,x)=>a+gradeMap[x.trim()],0)/v.length;
-  let msg = gpa>=9 ? "🌟 Excellent!" : gpa>=7 ? "👍 Good Job!" : gpa>=5 ? "🙂 Keep Improving" : "⚠️ Needs Work";
+  const v = g.filter(x => gradeMap[x.trim()] != undefined);
+  if (!v.length) return document.getElementById('gpa-result').textContent = "❌ Enter valid grades!";
+  const gpa = v.reduce((a, x) => a + gradeMap[x.trim()], 0) / v.length;
+  let msg = gpa >= 9 ? "🌟 Excellent!" : gpa >= 7 ? "👍 Good Job!" : gpa >= 5 ? "🙂 Keep Improving" : "⚠️ Needs Work";
   document.getElementById('gpa-result').textContent = `Your GPA: ${gpa.toFixed(2)} | ${msg}`;
 }
 // promodor timer
@@ -34,9 +34,9 @@ function updateDisplay() {
 
   const percent = duration / originalDuration;
   const msg = percent > 0.7 ? "🔥 You're doing great!" :
-              percent > 0.4 ? "⏳ Halfway there, keep pushing!" :
-              percent > 0.1 ? "🚀 Almost done, stay strong!" :
-              duration > 0 ? "⚡ Final minute!" : "✅ Well done!";
+    percent > 0.4 ? "⏳ Halfway there, keep pushing!" :
+      percent > 0.1 ? "🚀 Almost done, stay strong!" :
+        duration > 0 ? "⚡ Final minute!" : "✅ Well done!";
   document.getElementById('motivation').textContent = msg;
 }
 
@@ -70,10 +70,11 @@ function resetTimer() {
 }
 // unit converter
 const units = {
-  length: { cm: 1, m: 0.01, km: 0.00001, in: 0.3937, ft: 0.0328 },
-  weight: { g: 1, kg: 0.001, lb: 0.0022 },
+  length: { km: 1000, m: 1, cm: 0.01, in: 0.0254, ft: 0.3048 },
+  weight: { kg: 1, g: 0.001, lb: 0.4536 },
   temperature: { C: "C", F: "F", K: "K" }
 };
+
 
 function populateUnits() {
   const type = document.getElementById('unit-type').value;
@@ -97,16 +98,17 @@ function convertUnit() {
   let result = 0;
   if (type === 'temperature') {
     if (from === to) result = val;
-    else if (from === 'C' && to === 'F') result = val * 9/5 + 32;
+    else if (from === 'C' && to === 'F') result = val * 9 / 5 + 32;
     else if (from === 'C' && to === 'K') result = val + 273.15;
-    else if (from === 'F' && to === 'C') result = (val - 32) * 5/9;
-    else if (from === 'F' && to === 'K') result = (val - 32) * 5/9 + 273.15;
+    else if (from === 'F' && to === 'C') result = (val - 32) * 5 / 9;
+    else if (from === 'F' && to === 'K') result = (val - 32) * 5 / 9 + 273.15;
     else if (from === 'K' && to === 'C') result = val - 273.15;
-    else if (from === 'K' && to === 'F') result = (val - 273.15) * 9/5 + 32;
+    else if (from === 'K' && to === 'F') result = (val - 273.15) * 9 / 5 + 32;
   } else {
-    result = val * units[type][from] / units[type][to];
+    result = val * (units[type][from] / units[type][to]);
+
   }
 
-  document.getElementById('conversion-result').textContent = 
+  document.getElementById('conversion-result').textContent =
     `${val} ${from} = ${result.toFixed(4)} ${to}`;
 }
