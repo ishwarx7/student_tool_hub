@@ -337,3 +337,69 @@
   .promodoro-timer { font-size: 1.8rem; }
   .promodoro-btn, .promodoro-input { font-size: 0.9rem; }
 }
+/* unit */
+.unit-section {
+  padding: 2rem;
+  max-width: 500px;
+  margin: auto;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+.unit-section h2 {
+  font-size: 1.5rem;
+}
+
+.unit-input {
+  width: 100%;
+  padding: 0.6rem;
+  font-size: 1rem;
+  margin: 0.5rem 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.unit-btn {
+  padding: 0.6rem 1.2rem;
+  background: #1291b1;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: background 0.3s ease;
+}
+
+.unit-btn:hover {
+  background: #0f7a93;
+}
+
+.unit-output {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  color: #444;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .unit-section {
+    padding: 1.5rem;
+  }
+  .unit-btn {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .unit-section {
+    padding: 1rem;
+  }
+  .unit-input, .unit-btn {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+  .unit-section h2 {
+    font-size: 1.2rem;
+  }
+}

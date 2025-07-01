@@ -68,7 +68,6 @@
           <button onclick="calcGPA()" class="gpa-btn">Get GPA</button>
           <p id="gpa-result" class="gpa-result"></p>
         </section>
-        <h3>GPA Calculator</h3>
         <p>Calculate your GPA with ease. Supports weighted & unweighted scales.</p>
       </div>
       <div class="tool-card">
@@ -82,13 +81,29 @@
           <button onclick="startTimer()" class="promodoro-btn">Start</button>
           <button onclick="resetTimer()" class="promodoro-btn">Reset</button>
         </section>
-        <h3>Pomodoro Timer</h3>
         <p>Use our timer for focused study with structured breaks.</p>
       </div>
       <div class="tool-card">
-        <img src="assets/images/uncv.png" alt="Unit Converter Preview" loading="lazy"
-          style="width:100%; border-radius: 8px; margin-bottom: 12px;" />
-        <h3>Unit Converter</h3>
+        <!-- <img src="assets/images/uncv.png" alt="Unit Converter Preview" loading="lazy"
+          style="width:100%; border-radius: 8px; margin-bottom: 12px;" /> -->
+        <section class="unit-section">
+          <h2>📏 Unit Converter</h2>
+          <select id="unit-type" class="unit-input" onchange="populateUnits()">
+            <option value="length">Length</option>
+            <option value="weight">Weight</option>
+            <option value="temperature">Temperature</option>
+          </select>
+
+          <input type="number" id="input-value" placeholder="Enter value" class="unit-input">
+
+          <div>
+            <select id="from-unit" class="unit-input"></select>
+            <select id="to-unit" class="unit-input"></select>
+          </div>
+
+          <button onclick="convertUnit()" class="unit-btn">Convert</button>
+          <p id="conversion-result" class="unit-output"></p>
+        </section>
         <p>Convert length, weight, and more — all in one place.</p>
       </div>
     </div>

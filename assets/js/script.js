@@ -68,3 +68,45 @@ function resetTimer() {
   document.getElementById('timer').textContent = "00:00";
   document.getElementById('motivation').textContent = "Stay focused and start strong 💪";
 }
+// unit converter
+const units = {
+  length: { cm: 1, m: 0.01, km: 0.00001, in: 0.3937, ft: 0.0328 },
+  weight: { g: 1, kg: 0.001, lb: 0.0022 },
+  temperature: { C: "C", F: "F", K: "K" }
+};
+
+function populateUnits() {
+  const type = document.getElementById('unit-type').value;
+  const from = document.getElementById('from-unit');
+  const to = document.getElementById('to-unit');
+  from.innerHTML = to.innerHTML = '';
+  Object.keys(units[type]).forEach(u => {
+    from.innerHTML += `<option value="${u}">${u}</option>`;
+    to.innerHTML += `<option value="${u}">${u}</option>`;
+  });
+}
+populateUnits();
+
+function convertUnit() {
+  const type = document.getElementById('unit-type').value;
+  const val = parseFloat(document.getElementById('input-value').value);
+  const from = document.getElementById('from-unit').value;
+  const to = document.getElementById('to-unit').value;
+  if (isNaN(val)) return alert("⛔ Enter a number to convert");
+
+  let result = 0;
+  if (type === 'temperature') {
+    if (from === to) result = val;
+    else if (from === 'C' && to === 'F') result = val * 9/5 + 32;
+    else if (from === 'C' && to === 'K') result = val + 273.15;
+    else if (from === 'F' && to === 'C') result = (val - 32) * 5/9;
+    else if (from === 'F' && to === 'K') result = (val - 32) * 5/9 + 273.15;
+    else if (from === 'K' && to === 'C') result = val - 273.15;
+    else if (from === 'K' && to === 'F') result = (val - 273.15) * 9/5 + 32;
+  } else {
+    result = val * units[type][from] / units[type][to];
+  }
+
+  document.getElementById('conversion-result').textContent = 
+    `${val} ${from} = ${result.toFixed(4)} ${to}`;
+}
