@@ -274,3 +274,66 @@
   .gpa-section h2 { font-size: 1.1rem; }
   .gpa-input, .gpa-btn { font-size: 0.9rem; }
 }
+
+/* pomo */
+.promodoro-section {
+  padding: 2rem;
+  max-width: 500px;
+  margin: auto;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+.promodoro-section h2 {
+  font-size: 1.5rem;
+}
+
+.promodoro-input {
+  width: 60%;
+  padding: 0.6rem;
+  font-size: 1rem;
+  margin: 1rem 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.promodoro-timer {
+  font-size: 2.5rem;
+  margin: 0.5rem 0;
+  color: #1291b1;
+  font-weight: bold;
+}
+
+.promodoro-motivation {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #444;
+}
+
+.promodoro-btn {
+  padding: 0.6rem 1.2rem;
+  margin: 0.5rem;
+  background: #1291b1;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.promodoro-btn:hover {
+  background: #0f7a93;
+}
+
+@media (max-width: 768px) {
+  .promodoro-section { padding: 1.5rem; }
+  .promodoro-timer { font-size: 2rem; }
+  .promodoro-btn { font-size: 0.95rem; }
+}
+
+@media (max-width: 480px) {
+  .promodoro-section { padding: 1rem; }
+  .promodoro-timer { font-size: 1.8rem; }
+  .promodoro-btn, .promodoro-input { font-size: 0.9rem; }
+}

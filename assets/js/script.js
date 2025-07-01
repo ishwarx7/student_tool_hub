@@ -25,3 +25,46 @@ function calcGPA(){
   document.getElementById('gpa-result').textContent = `Your GPA: ${gpa.toFixed(2)} | ${msg}`;
 }
 // promodor timer
+let duration = 0, timerId, running = false;
+
+function updateDisplay() {
+  const min = String(Math.floor(duration / 60)).padStart(2, '0');
+  const sec = String(duration % 60).padStart(2, '0');
+  document.getElementById('timer').textContent = `${min}:${sec}`;
+
+  const percent = duration / originalDuration;
+  const msg = percent > 0.7 ? "🔥 You're doing great!" :
+              percent > 0.4 ? "⏳ Halfway there, keep pushing!" :
+              percent > 0.1 ? "🚀 Almost done, stay strong!" :
+              duration > 0 ? "⚡ Final minute!" : "✅ Well done!";
+  document.getElementById('motivation').textContent = msg;
+}
+
+let originalDuration = 0;
+function startTimer() {
+  if (running) return;
+  const input = parseInt(document.getElementById('set-minutes').value);
+  if (!input || input < 1) return alert("⛔ Enter a valid number of minutes");
+
+  duration = input * 60;
+  originalDuration = duration;
+  updateDisplay();
+  running = true;
+  timerId = setInterval(() => {
+    if (duration > 0) {
+      duration--;
+      updateDisplay();
+    } else {
+      clearInterval(timerId);
+      running = false;
+    }
+  }, 1000);
+}
+
+function resetTimer() {
+  clearInterval(timerId);
+  running = false;
+  duration = 0;
+  document.getElementById('timer').textContent = "00:00";
+  document.getElementById('motivation').textContent = "Stay focused and start strong 💪";
+}

@@ -72,8 +72,16 @@
         <p>Calculate your GPA with ease. Supports weighted & unweighted scales.</p>
       </div>
       <div class="tool-card">
-        <img src="assets/images/promo.jpg" alt="Pomodoro Timer Preview" loading="lazy"
-          style="width:100%; border-radius: 8px; margin-bottom: 12px;" />
+        <!-- <img src="assets/images/promo.jpg" alt="Pomodoro Timer Preview" loading="lazy"
+          style="width:100%; border-radius: 8px; margin-bottom: 12px;" /> -->
+        <section class="promodoro-section">
+          <h2>⏱️ Custom Promodoro Timer</h2>
+          <input type="number" id="set-minutes" placeholder="Enter minutes" min="1" class="promodoro-input">
+          <p id="timer" class="promodoro-timer">00:00</p>
+          <p id="motivation" class="promodoro-motivation">Stay focused and start strong 💪</p>
+          <button onclick="startTimer()" class="promodoro-btn">Start</button>
+          <button onclick="resetTimer()" class="promodoro-btn">Reset</button>
+        </section>
         <h3>Pomodoro Timer</h3>
         <p>Use our timer for focused study with structured breaks.</p>
       </div>
