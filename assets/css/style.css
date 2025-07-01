@@ -19,8 +19,7 @@
      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
      scroll-behavior: smooth;
      padding-top: 80px;
-     background-color: #e2dadaee;
-     color: #0d0d0d;
+     background-color: #000000ee;
      color: var(--light);
      line-height: 2;
      overflow-x: hidden;
@@ -155,7 +154,7 @@
  .hero {
       text-align: center;
       padding: 80px 20px;
-      color: var(--dark);
+      color: var(--light);
     }
 
     .hero h1 {
