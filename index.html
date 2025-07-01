@@ -1,14 +1,16 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>studentsaitool</title>
 
   <!-- SEO -->
-  <meta name="description" content="Free online tools for students – GPA calculator, Pomodoro timer, converters, and more." />
-  <meta name="keywords" content="studentsaitool, student tools, GPA calculator, Pomodoro timer, unit converter, study productivity" />
+  <meta name="description"
+    content="Free online tools for students – GPA calculator, Pomodoro timer, converters, and more." />
+  <meta name="keywords"
+    content="studentsaitool, student tools, GPA calculator, Pomodoro timer, unit converter, study productivity" />
   <meta name="author" content="studentsaitool" />
 
   <!-- Favicon -->
@@ -28,8 +30,8 @@
 </head>
 
 <body>
-<!-- header -->
-    <nav class="navbar">
+  <!-- header -->
+  <nav class="navbar">
     <div class="logo">studentsaitool</div>
     <div class="menu-toggle">
       <div></div>
@@ -46,7 +48,7 @@
       <li><a href="#terms">Terms</a></li>
     </ul>
   </nav>
-<!-- hero -->
+  <!-- hero -->
   <section class="hero" id="home">
     <h1>Welcome to StudentSAITool</h1>
     <p>Smart, fast, and free tools to boost your student life productivity.</p>
@@ -55,28 +57,38 @@
 
   <!-- tools -->
   <section id="tools">
-  <h2>Our Tools</h2>
-  <div class="grid-container">
-    <div class="tool-card">
-      <img src="assets/images/GPA.png" alt="GPA Calculator Preview" loading="lazy" style="width:100%; border-radius: 8px; margin-bottom: 12px;" />
-      <h3>GPA Calculator</h3>
-      <p>Calculate your GPA with ease. Supports weighted & unweighted scales.</p>
+    <h2>Our Tools</h2>
+    <div class="grid-container">
+      <div class="tool-card">
+        <!-- <img src="assets/images/GPA.png" alt="GPA Calculator Preview" loading="lazy" style="width:100%; border-radius: 8px; margin-bottom: 12px;" /> -->
+
+        <section class="gpa-section">
+          <h2>🎓 Quick GPA Checker</h2>
+          <input id="grades" placeholder="Grades: A,B+,C..." class="gpa-input">
+          <button onclick="calcGPA()" class="gpa-btn">Get GPA</button>
+          <p id="gpa-result" class="gpa-result"></p>
+        </section>
+        <h3>GPA Calculator</h3>
+        <p>Calculate your GPA with ease. Supports weighted & unweighted scales.</p>
+      </div>
+      <div class="tool-card">
+        <img src="assets/images/promo.jpg" alt="Pomodoro Timer Preview" loading="lazy"
+          style="width:100%; border-radius: 8px; margin-bottom: 12px;" />
+        <h3>Pomodoro Timer</h3>
+        <p>Use our timer for focused study with structured breaks.</p>
+      </div>
+      <div class="tool-card">
+        <img src="assets/images/uncv.png" alt="Unit Converter Preview" loading="lazy"
+          style="width:100%; border-radius: 8px; margin-bottom: 12px;" />
+        <h3>Unit Converter</h3>
+        <p>Convert length, weight, and more — all in one place.</p>
+      </div>
     </div>
-    <div class="tool-card">
-      <img src="assets/images/promo.jpg" alt="Pomodoro Timer Preview" loading="lazy" style="width:100%; border-radius: 8px; margin-bottom: 12px;" />
-      <h3>Pomodoro Timer</h3>
-      <p>Use our timer for focused study with structured breaks.</p>
-    </div>
-    <div class="tool-card">
-      <img src="assets/images/uncv.png" alt="Unit Converter Preview" loading="lazy" style="width:100%; border-radius: 8px; margin-bottom: 12px;" />
-      <h3>Unit Converter</h3>
-      <p>Convert length, weight, and more — all in one place.</p>
-    </div>
-  </div>
-</section>
+  </section>
 
 
 
   <script src="assets/js/script.js"></script>
 </body>
+
 </html>

@@ -220,3 +220,57 @@
     transform: translateY(-5px);
     box-shadow: 0 4px 14px rgba(0,0,0,0.3);
   }
+
+  /* gpa */
+    .gpa-section {
+  padding: 2rem;
+  max-width: 500px;
+  margin: auto;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+.gpa-section h2 {
+  font-size: 1.5rem;
+}
+
+.gpa-input {
+  width: 100%;
+  padding: 0.7rem;
+  font-size: 1rem;
+  margin: 1rem 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.gpa-btn {
+  padding: 0.6rem 1.2rem;
+  background: #1291b1;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.gpa-btn:hover {
+  background: #0f7a93;
+}
+
+.gpa-result {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  .gpa-section { padding: 1.5rem; }
+  .gpa-section h2 { font-size: 1.25rem; }
+  .gpa-input, .gpa-btn { font-size: 0.95rem; }
+}
+
+@media (max-width: 480px) {
+  .gpa-section { padding: 1rem; }
+  .gpa-section h2 { font-size: 1.1rem; }
+  .gpa-input, .gpa-btn { font-size: 0.9rem; }
+}
