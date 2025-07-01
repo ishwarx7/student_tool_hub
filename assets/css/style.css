@@ -59,6 +59,10 @@
      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
      transition: all 0.3s ease;
  }
+ .navbar.hide {
+  transform: translate(-50%, -110%);
+}
+
 
  .logo {
      font-size: 1.6rem;

@@ -1,3 +1,16 @@
+// header scorll
+let lastScrollY = window.scrollY;
+const navbar = document.querySelector('.navbar');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > lastScrollY) {
+    navbar.classList.add('hide');
+  } else {
+    navbar.classList.remove('hide');
+  }
+  lastScrollY = window.scrollY;
+});
+
 // header sidebar
 document.addEventListener("DOMContentLoaded", () => {
   const toggle = document.querySelector(".menu-toggle");
