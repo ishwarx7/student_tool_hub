@@ -20,6 +20,7 @@
      scroll-behavior: smooth;
      padding-top: 80px;
      background-color: #e2dadaee;
+     color: #0d0d0d;
      color: var(--light);
      line-height: 2;
      overflow-x: hidden;
