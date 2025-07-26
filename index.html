@@ -118,7 +118,26 @@
     </div>
   </section>
 
+ <h2>Ask Supermemory</h2>
+  <input type="text" id="query" placeholder="Enter your memory or question">
+  <button onclick="askMemory()">Submit</button>
+  <pre id="result"></pre>
 
+  <script>
+    async function askMemory() {
+      const query = document.getElementById('query').value;
+      const response = await fetch('https://api.supermemory.ai/v3/https://api.openai.com/v1/chat/completions', {
+        method: 'POST',
+        headers: {
+          'Authorization': 'sm_undefined_hcpiuIqGIimlffyJiNwQxGMWTsCeKYpPkSPtsEVBijinQcKHlezaZuRYexCSiRjr',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ message })
+      });
+      const data = await response.json();
+      document.getElementById('result').innerText = JSON.stringify(data, null, 2);
+    }
+  </script>
 
   <script src="assets/js/script.js"></script>
 </body>
